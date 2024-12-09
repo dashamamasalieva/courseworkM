@@ -1,0 +1,29 @@
+{% extends "myapp/base.html" %}
+{% block content %}
+<div class="zalogo">
+    <h1>Главная</h1>
+</div>
+{% if posts %}
+<div class="containers">
+    <form method="get" class="form-filter">
+        <div class="fil">
+            {{ posts.form.as_p }}
+            <button type="submit" class="filt">Фильтровать</button>
+        </div>
+    </form>
+</div>
+<div class="total">
+    {% for post in posts.qs %}
+
+    <div class="media">
+        <img width="166" height="134" src="media/{{ post.photo }}">
+        <p class="title"> {{ post.title }}</p>
+        <p class="price"><b>{{ post.price }}</b></p>
+        <button class="model"  onclick="location.href = '{% url 'goog-detail' post.id %}'">Об услуге</button>
+    </div>
+    {% endfor %}
+</div>
+{% else %}
+<p>Нет записей</p>
+{% endif %}
+{% endblock content %}

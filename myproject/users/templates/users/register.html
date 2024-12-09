@@ -1,0 +1,24 @@
+{% extends "myapp/base.html" %}
+{% load crispy_forms_tags %}
+{% block content %}
+<div class="content-section">
+    <form method="POST">
+        {% csrf_token %}
+        <fieldset class="form-group">
+            <div class="ozuv">
+            <h2 class="border-bottom mb-4">Регистрация</h2></div>
+            {{ form|crispy }}
+
+            <div class="registr">
+                <button class="regestraca" type="submit">Регистрация</button>
+            </div>
+            <div class="vhod">
+                <p class="text-muted">
+                    Уже есть аккаунт? <a class="ml-2" href="#">Вход</a>
+                </p>
+            </div>
+        </fieldset>
+    </form>
+
+</div>
+{% endblock content %}

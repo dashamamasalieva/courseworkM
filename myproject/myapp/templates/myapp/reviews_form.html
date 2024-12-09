@@ -1,0 +1,15 @@
+{% extends "myapp/base.html" %}
+{% load crispy_forms_tags %}
+{% block content %}
+<div class="content-section">
+    <form method="POST" class="forma">
+        {% csrf_token %}
+        <fieldset class="form-group">
+            <div class="ozuv">
+            <h2 class="border-bottom mb-4">Отзыв</h2></div>
+            {{ form|crispy }}
+        <button class="coxranit" type="submit">Сохранить</button>
+        </fieldset>
+    </form>
+</div>
+{% endblock content %}

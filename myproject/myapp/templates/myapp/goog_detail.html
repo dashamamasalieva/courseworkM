@@ -1,0 +1,14 @@
+{% extends 'myapp/base.html' %}
+
+{% block content %}
+<div class="zalogo">
+    <h1>Описание товара</h1>
+</div>
+<p><b>Название:</b> </p>
+<p> {{ object.title }}</p>
+<img width="440" height="300" src="/media/{{ object.photo }}">
+<p><b>Описание:</b></p>
+<p>{{ object.description }}</p>
+<p><b>Цена:</b></p>
+<p>{{ object.price }} р.</p>
+{% endblock %}

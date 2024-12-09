@@ -1,0 +1,26 @@
+{% extends "myapp/base.html" %}
+{% block content %}
+<div class="zalogo">
+    <h1>Отзывы покупателей</h1>
+</div>
+{% if user.is_authenticated %}
+<div class="buton">
+    <a href="{% url 'reviews-create' %}">Написать отзыв</a>
+</div>
+{% endif %}
+<div class="row">
+    <div class="col-md-8">
+        {% if reviews %}
+        {% for rev in reviews %}
+        <div class="alert">
+            <h3>{{ rev.author }}</h3>
+            <p>{{rev.content}}</p>
+        </div>
+        {% endfor %}
+    </div>
+
+</div>
+{% else %}
+<p>Нет записей</p>
+{% endif %}
+{% endblock content %}
