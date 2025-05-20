@@ -17,9 +17,14 @@
 
     <div class="media">
         <img width="166" height="134" src="media/{{ post.photo }}">
-        <p class="title"> {{ post.title }}</p>
-        <p class="price"><b>{{ post.price }}</b></p>
-        <button class="model"  onclick="location.href = '{% url 'goog-detail' post.id %}'">Об услуге</button>
+        <p class="title" style="width: 180px;"> {{ post.title }}</p>
+        <p class="price"><b>{{ post.price }} р.</b></p>
+        <button class="model" style="height: 30px; width: 100px;" onclick="location.href = '{% url 'goog-detail' post.id %}'">О товаре</button>
+        {% if user.is_authenticated %}
+        <button class="model" onclick="location.href = '{% url 'orders-create' post.id %}'"
+                style="width:100px;height:30px;padding:0;">Выбрать
+        </button>
+        {% endif %}
     </div>
     {% endfor %}
 </div>

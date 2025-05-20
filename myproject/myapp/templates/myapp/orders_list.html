@@ -1,0 +1,83 @@
+{% extends 'myapp/base.html' %}
+{% load static %}
+
+{% block title %}
+Заявки
+{% endblock %}
+
+{% block content %}
+
+{% if user.is_authenticated %}
+{% if user.is_superuser %}
+
+<div class="order-table">
+    <h2>Заявки</h2>
+    <div class="ww">
+    </div>
+    {% if filter.qs %}
+    <table>
+        <tr>
+            <th>Номер</th>
+            <th>Наименование</th>
+            <th>Дата создания</th>
+            <th>Стоимость</th>
+            <th>Пользователь</th>
+            <th>Статус</th>
+            <th>Услуги</th>
+        </tr>
+        {% for elem in filter.qs %}
+        <tr>
+            <td>{{ elem.id }}</td>
+            <td>{{ elem.prod }}</td>
+            <td>{{ elem.created }}<br>
+            <td>{{ elem.prod.price }}</td>
+            <td>{{ elem.owner }}</td>
+            <td>{{ elem.stat }}</td>
+            <td>{{ elem.service }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+    {% else %}
+    <p>У нас нет записей</p>
+
+    {% endif %}
+</div>
+{% else %}
+
+<div class="orders-table">
+    <h2>Заявки</h2>
+    {% if filter.qs %}
+    <table style="border: none">
+        <tr>
+            <th>Номер</th>
+            <th>Наименование</th>
+            <th>Дата создания</th>
+            <th>Стоимость</th>
+            <th>Пользователь</th>
+            <th>Статус</th>
+            <th>Услуги</th>
+
+        </tr>
+        {% for elem in filter.qs %}
+        <tr>
+            <td>{{ elem.id }}</td>
+            <td>{{ elem.prod.title }}</td>
+            <td>{{ elem.created }}<br>
+            <td>{{ elem.prod.price }} руб.</td>
+            <td>{{ elem.owner }}</td>
+            <td>{{ elem.stat }}</td>
+            <td>{{ elem.service }}</td>
+
+        </tr>
+        {% endfor %}
+    </table>
+    {% else %}
+    <p>У нас нет записей</p>
+    {% endif %}
+</div>
+
+{% endif %}
+{% else %}
+<a href="/login">Авторизация</a>
+{% endif %}
+{% endblock %}

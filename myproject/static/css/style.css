@@ -1,0 +1,277 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: Inter;
+}
+
+.navbar-nava{
+    margin-left: 600px;
+    display: flex;
+}
+
+.container{
+    margin: 0;
+}
+.nav-link{
+    text-align: center;
+    color: black;
+    text-decoration: none;
+    margin-right: 60px;
+    margin-top: 35px;
+
+}
+
+.table-orders {
+    font-size: 16px;
+    background: white;
+    max-width: 80%;
+    width: 80%;
+    border-collapse: collapse;
+    text-align: left;
+}
+.table-orders {
+    font-size: 16px;
+    background: white;
+    max-width: 80%;
+    width: 80%;
+    border-collapse: collapse;
+    text-align: left;
+    margin-left: 230px;
+    
+}
+
+
+.table-orders tr {
+    font-weight: normal;
+    color: black;
+    border: 1px solid black;
+    padding: 10px 8px;
+}
+
+.table-orders td {
+    border: 1px solid black;
+    padding: 9px 8px;
+    transition: .3s linear;
+}
+.table-orders td {
+    
+    padding: 9px 8px;
+    transition: .3s linear;
+}
+
+
+.table-orders__is-active {
+    font-weight: 700;
+}
+
+
+.navbars a{
+    color: #c6ad6b;
+    
+}
+.navbars {
+
+    display: flex;
+    
+    
+}
+
+.ddd {
+    border: 1px solid #B6ABAB;
+    width: 500px;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    margin-left:600px;
+}
+.gg {
+    margin-left: 10px;
+    margin-top: 40px;
+}
+.pred {
+    margin-left: 10px;
+}
+
+.otpr {
+    width: 124px;
+    height: 30px;
+    background-color: white;
+    border: 1px solid #001f34;
+    border-radius: 7px;
+    color: #001f34;
+    margin-bottom: 40px;
+    margin-left: 10px;
+
+}
+
+table {
+    width: 1000px;
+    margin-left: 200px;
+	margin-bottom: 20px;
+	border: 1px solid #c6ad6b;
+	border-collapse: collapse;
+}
+table th {
+	font-weight: bold;
+	padding: 5px;
+	background:#c6ad6b;
+	border: 1px solid #c6ad6b;
+	color: #001f34,
+}
+table td {
+	border: 1px solid #c6ad6b;
+	padding: 5px;
+}
+
+.order-table{
+    margin-left: 130px;
+}
+.ww{
+    display: grid;
+    grid-template-columns: repeat(2, 500px);
+    grid-template-rows: auto;
+    justify-items: center;
+    gap: 5px;
+    margin-left: 300px;
+}
+
+.orders-table h2{
+    margin-left: 120px;
+    margin-bottom: 50px;
+}
+
+header{
+    background-color: #001f34;
+}
+.total{
+    margin-left: 100px;
+    display: grid;
+    grid-template-columns: repeat(7, 220px);
+    grid-template-rows: auto;
+    gap: 30px;
+}
+
+footer{
+    background-color: #001f34;
+    height: 60px;
+}
+
+#div_id_username{
+    margin-bottom: 10px;
+}
+
+.ozuv{
+    margin-top: 30px;
+}
+
+.logout{
+    margin: 100px;
+
+}
+
+.vhod a{
+    color: #c6ad6b;
+}
+
+.logout a{
+    font-size: 20px;
+    color: #c6ad6b;
+}
+
+.voeti{
+    margin-top: 10px;
+    width: 70px;
+}
+
+footer a{
+    text-decoration: none;
+    color: #c6ad6b;
+    
+}
+footer p{
+    padding-top: 10px;
+}
+.logo{
+    height: 100px;
+    width: auto;
+    margin-right: 30px;
+}
+
+.zalogo{
+    margin-left: 100px;
+    margin-top: 20px;
+}
+
+button{
+    background-color: #c6ad6b;
+    border: 1px solid #001f34;
+}
+
+.alert{
+    margin-left: 100px;
+    width: 800px;
+}
+
+.containers{
+    margin-left: 100px;
+}
+
+.media{
+    border: 1px solid black;
+    position: relative;
+    margin-bottom: 20px;
+    border-radius: 20px;
+}
+
+.media img,p{
+    margin-top: 10px;
+    margin-left: 20px;
+    
+}
+
+.model{
+    margin-bottom: 20px;
+    margin-left: 60px;
+}
+
+.fil{
+    display: flex;
+
+}
+
+.fil button{
+    margin-left: 20px;
+    height: 30px;
+    margin-top: 10px;
+}
+
+button{
+    border-radius: 5px;
+}
+
+.graf{
+    width: 800px;
+    margin-left: 550px;
+}
+
+.model{
+    width: 600px;
+    margin-left: 100px;
+}
+.text{
+    width: 700px;
+    background-color: #ece7e7;
+    margin-left: 50px;
+}
+.context{
+    display: flex;
+    margin-bottom: 50px;
+    margin-top: 50px;
+}
+.cart{
+    margin-left: 55px;
+}
+.history{
+    margin-left: 40px; 
+    margin-top: 50px; 
+    width: 1440px;
+}

@@ -1,0 +1,39 @@
+<!-- temperature_chart/templates/charts/temperature_chart.html -->
+
+{% extends 'myapp/base.html' %}
+
+{% block title %}Статистика по месяцам{% endblock %}
+
+{% block content %}
+<div class="graf" style="display: block; box-sizing: border-box;">
+    <canvas id="typeofserviceChart" width="100" height="100"></canvas>
+</div>
+<script>
+        document.addEventListener('DOMContentLoaded', function() {
+            fetch('/googcount-data/')
+                .then(response => response.json())
+                .then(data => {
+                    var ctx = document.getElementById('typeofserviceChart').getContext('2d');
+                    var temperatureChart = new Chart(ctx, {
+                        type: 'line',
+                        data: {
+                            labels: data.labels,
+                            datasets: [{
+                                label: 'Заявки по месяцам',
+                                data: data.values,
+                                borderColor: ['rgba(255, 99, 132, 1)'],
+                                borderWidth: 2,
+                            }]
+                        },
+                        options: {
+                            scales: {
+                                y: {
+                                    beginAtZero: true
+                                }
+                            }
+                        }
+                    });
+                });
+        });
+</script>
+{% endblock %}

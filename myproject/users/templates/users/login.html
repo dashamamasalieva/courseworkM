@@ -1,7 +1,7 @@
 {% extends "myapp/base.html" %}
 {% load crispy_forms_tags %}
 {% block content %}
-    <div class="content-section">
+    <div class="content-section" style="width: 400px; margin-left: 100px;">
         <form method="POST">
             {% csrf_token %}
             <fieldset class="form-group">
@@ -10,12 +10,13 @@
                 {{ form|crispy }}
 
                 <button class="voeti" type="submit">Войти</button>
-        </form>
-        <div class="vhod">
-            <p class="text-muted">
-                Нужен аккаунт? <a class="ml-2" href="{% url 'register' %}">Регистрация</a>
-            </p>
+
+                <div class="vhod">
+                    <p class="text-muted">
+                        Нужен аккаунт? <a class="ml-2" href="{% url 'register' %}">Регистрация</a>
+                    </p>
+                </div>
             </fieldset>
-        </div>
+        </form>
     </div>
 {% endblock content %}

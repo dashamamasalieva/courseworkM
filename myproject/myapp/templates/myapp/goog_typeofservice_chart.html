@@ -1,0 +1,39 @@
+{% extends 'myapp/base.html' %}
+
+{% block title %}График услуг{% endblock %}
+
+{% block content %}
+<div class="graf" style="display: block; box-sizing: border-box;">
+    <canvas id="goog_typeofservice_data" width="300" height="300"></canvas>
+</div>
+<script>
+        document.addEventListener('DOMContentLoaded', function() {
+            fetch('/googtypeofservice-data/')
+                .then(response => response.json())
+                .then(data => {
+                    var ctx = document.getElementById('goog_typeofservice_data').getContext('2d');
+                    var temperatureChart = new Chart(ctx, {
+                        type: 'pie',
+                        data: {
+                            labels: data.labels,
+                            datasets: [{
+                                label: 'Заказы по типам услуг',
+                                data: data.values,
+                                backgroundColor: ['rgba(255, 99, 132, 1)',
+                                'rgba(225, 199, 62, 1)',
+                                'rgba(125, 139, 32, 1)',
+                                'rgba(215, 129, 82, 1)']
+                            }]
+                        },
+                        options: {
+                            scales: {
+                                y: {
+                                    beginAtZero: false
+                                }
+                            }
+                        }
+                    });
+                });
+        });
+</script>
+{% endblock %}

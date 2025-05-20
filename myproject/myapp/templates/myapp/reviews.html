@@ -5,11 +5,11 @@
 </div>
 {% if user.is_authenticated %}
 <div class="buton">
-    <a href="{% url 'reviews-create' %}">Написать отзыв</a>
+    <button class="" style="height: 30px; width: 140px; margin-left: 100px;" onclick="location.href = '{% url 'reviews-create' %}'">Написать отзыв</button>
 </div>
 {% endif %}
 <div class="row">
-    <div class="col-md-8">
+    <div class="alerts">
         {% if reviews %}
         {% for rev in reviews %}
         <div class="alert">
